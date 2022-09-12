@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy } from 'react';
 import './App.css';
-import FoodPage from './Screen/FoodPage';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-import Login from './Screen/Login';
 import { firebaseApp } from './Utils/FirebaseUtils';
+import Login from './Screen/Login';
+const FoodPage = lazy(() => import('./Screen/FoodPage'));
 
 const App = () => {
   const [loggedin, setLoggedin] = useState(false);
